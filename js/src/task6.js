@@ -1,17 +1,15 @@
 function getNumberSequence(sequenceLength, start) {
     sequenceLength = Math.abs(sequenceLength);
     start = Math.abs(start);
-    let i = Math.floor(Math.sqrt(start));
+    let i = Math.floor(Math.sqrt(start)); //30 => 5
+    let result = [];
 
-    if(validateSequence(sequenceLength, start)) {
+    if (validateSequence(sequenceLength, start)) {
         return validateSequence(sequenceLength, start);
     }
 
-    let result = [];
     do {
-        if (Math.pow(i, 2) >= start) {
-            result.push(i);
-        }
+        result.push(i);
         i++;
     } while (result.length < sequenceLength);
 
