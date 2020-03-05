@@ -70,7 +70,7 @@ function validateTriangles(list, first, second, third, i) {
             reason: 'Some name of triangle is not unique'
         };
     };
-    if(list[i].veh !== keyNames) {
+    if(list[i].veh.toUpperCase() !== keyNames) {
         return {
             status: 'failed',
             reason: 'Wrong key parameters'
