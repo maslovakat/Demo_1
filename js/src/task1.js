@@ -1,16 +1,18 @@
 function createChessBoard(height, width, symbol) {
+    height = Math.abs(height);
+    width = Math.abs(width);
+    symbol = String(symbol)[0];
 
     // check error
     if (validateBoard(height, width, symbol)) {
         return validateBoard(height, width, symbol);
     }
 
-    symbol = String(symbol)[0];
     let result = '';
 
-    for (let i = 0; i <= Math.abs(height); i++) {
+    for (let i = 0; i < height; i++) {
         let signOnTheBoard = i % 2 === 0 ? ' ' : symbol;
-        for (let j = 0; j < Math.abs(width); j++) {
+        for (let j = 0; j < width; j++) {
             signOnTheBoard = signOnTheBoard === ' ' ? symbol : ' ';
             result += signOnTheBoard;
         }
