@@ -4,13 +4,13 @@ export function testChessBoard(assert) {
 
     describe('Chess Board', () => {
         it("Board with one letter", () => {
-            assert.deepEqual(createChessBoard(9, 3, 'G'), 'G G\n G \nG G\n G \nG G\n G \nG G\n G \nG G\n G \n')
+            assert.deepEqual(createChessBoard(9, 3, 'G'), 'G G\n G \nG G\n G \nG G\n G \nG G\n G \nG G\n')
         });
         it("Board with one number", () => {
-            assert.deepEqual(createChessBoard(12, 12, 8), '8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n')
+            assert.deepEqual(createChessBoard(12, 12, 8), '8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n8 8 8 8 8 8 \n 8 8 8 8 8 8\n')
         });
         it("Board with one word", () => {
-            assert.deepEqual(createChessBoard(3,12, 'Word'), 'W W W W W W \n W W W W W W\nW W W W W W \n W W W W W W\n')
+            assert.deepEqual(createChessBoard(3,12, 'Word'), 'W W W W W W \n W W W W W W\nW W W W W W \n')
         });
 
         describe('Invalid arguments', () => {
