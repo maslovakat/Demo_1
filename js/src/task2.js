@@ -25,14 +25,14 @@ function validateEnvelope(a,b,c,d) {
         return {
             status: 'failed',
             reason: 'You have written wrong type of data, please write number'
-        }
-    }
+        };
+    };
     if (a === 0 || b === 0 || c === 0 || d === 0) {
         return {
             status: 'failed',
             reason: 'Some fields are empty'
-        }
-    }
+        };
+    };
 }
 export {
     isFitEnvelope
