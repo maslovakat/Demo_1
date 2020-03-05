@@ -1,5 +1,3 @@
-// import { validation } from "./validation";
-
 function getLuckyTicket(obj) {
     let min = Math.abs(obj.min);
     let max = Math.abs(obj.max);
@@ -14,10 +12,7 @@ function getLuckyTicket(obj) {
         winner: ''
     }
 
-    for (let i = Math.abs(min); i <= max; i++) {
-        if (i > 999999) {
-            break;
-        }
+    for (let i = min; i <= max; i++) {
         let arr = String(i).split('');
 
         // add zero before number
@@ -55,7 +50,7 @@ function getLuckyTicket(obj) {
         result.winner = 'Hard' : result.winner = 'Draw';
 
     return result;
-}
+};
 
 function validateTicket(min, max) {
     if (min === 0 || max === 0) {
@@ -63,25 +58,25 @@ function validateTicket(min, max) {
             status: 'failed',
             reason: `number can't be 0`
         };
-    }
+    };
     if (isNaN(min) || isNaN(max)) {
         return {
             status: 'failed',
             reason: 'You have written a wrong type of parameter'
         };
-    }
+    };
     if (min > max) {
         return {
             status: 'failed',
             reason: 'Min number is higher than max number'
         };
-    }
+    };
     if (max > 999999) {
         return {
             status: 'failed',
             reason: 'You have written wrong range of numbers, please write from 0 to 999999'
         };
-    }
+    };
 }
 
 export {
