@@ -60,9 +60,9 @@ export function testTriangles(assert) {
             it("Veh type number", () => {
                 assert.deepEqual(sortTriangles([{
                     veh: 987,
-                    a: 10,
-                    b: 20,
-                    c: 22.36
+                    9: 10,
+                    8: 20,
+                    7: 22.36
                 }]), {
                     status: 'failed',
                     reason: 'Wrong type of data'
@@ -70,7 +70,7 @@ export function testTriangles(assert) {
             });
             it("Veh length 2", () => {
                 assert.deepEqual(sortTriangles([{
-                    veh: 'LO',
+                    veh: 'AB',
                     a: 10,
                     b: 20,
                     c: 22.36
@@ -81,7 +81,7 @@ export function testTriangles(assert) {
             });
             it("Triangle's sides are not number", () => {
                 assert.deepEqual(sortTriangles([{
-                    veh: 'LPO',
+                    veh: 'ABC',
                     a: 'hh',
                     b: 20,
                     c: 22.36
@@ -92,13 +92,24 @@ export function testTriangles(assert) {
             });
             it("Some fields are empty", () => {
                 assert.deepEqual(sortTriangles([{
-                    veh: 'LPO',
+                    veh: 'ABC',
                     a: 0,
                     b: 20,
                     c: 22.36
                 }]),{
                     status: 'failed',
                     reason: 'Some fields are empty'
+                })
+            });
+            it("Wrong key parameters", () => {
+                assert.deepEqual(sortTriangles([{
+                    veh: 'LPO',
+                    a: 18,
+                    p: 20,
+                    c: 22.36
+                }]),{
+                    status: 'failed',
+                    reason: 'Wrong key parameters'
                 })
             });
         });
