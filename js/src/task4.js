@@ -16,7 +16,7 @@ function findPolindrom(number) {
             concatPolindrom(i, i + 1);
         };
         if (str[i - 1] === str[i + 1]) {
-            polindrom.push(str[i])
+            polindrom.push(str[i]);
             concatPolindrom(i - 1, i + 1);
         };
     }
@@ -38,9 +38,9 @@ function findPolindrom(number) {
         }
     }
 
-    polindromList.sort((a, b) => b.length - a.length)
+    polindromList.sort((a, b) => b.length - a.length);
     return +polindromList[0] || 0;
-}
+};
 
 function validatePolindrom(number) {
     if (isNaN(number)) {
@@ -48,20 +48,20 @@ function validatePolindrom(number) {
             status: 'failed',
             reason: 'Wrong type of data: please write "number"'
         };
-    }
+    };
     if (number === 0) {
         return {
             status: 'failed',
             reason: 'Field is empty'
         };
-    }
+    };
     if (number < 10 || !Number.isInteger(number) && number > 0) {
         return {
             status: 'failed',
             reason: 'Wrong number: please write whole number higher than 9'
         };
-    }
-}
+    };
+};
 
 export {
     findPolindrom
